@@ -7,6 +7,7 @@ Orders are read from JSON files. They consist of:
 - Order value,
 - Time needed to complete and pack the order,
 - The time by which the order must be completed.
+
 After reading the parameters, they are analyzed.
 Orders are placed in the correct order depending on the sorting method.
 The final result of the program is a schedule consisting of:
