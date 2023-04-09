@@ -10,6 +10,7 @@ public class OrderClass {
     Double orderValue;
     Duration pickingTime;
     LocalTime completeBy;
+    Double profitability;
 
     public OrderClass(String orderId, Double orderValue, Duration pickingTime, LocalTime completeBy) {
         this.orderId = orderId;
@@ -18,7 +19,13 @@ public class OrderClass {
         this.completeBy = completeBy;
     }
 
-    public OrderClass() {
+
+    public OrderClass(String orderId, Double orderValue, Duration pickingTime, LocalTime completeBy, Double profitability) {
+        this.orderId = orderId;
+        this.orderValue = orderValue;
+        this.pickingTime = pickingTime;
+        this.completeBy = completeBy;
+        this.profitability = profitability;
     }
 
     public String getOrderId() {
@@ -35,6 +42,9 @@ public class OrderClass {
 
     public LocalTime getCompleteBy() {
         return completeBy;
+    }
+    public Double getProfitability() {
+        return profitability;
     }
 
     public void setOrderId(String orderId) {

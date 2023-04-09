@@ -6,12 +6,9 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.time.Duration;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,14 +20,12 @@ import java.util.List;
 public class ReadOrders {
     public List<OrderClass> orderClasses = new ArrayList<>();
 
-    public ReadOrders(){
+    public ReadOrders(String url){
         JSONParser parser = new JSONParser();
-        JSONArray a = null;
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        JSONArray a;
+
         try {
-            //a = (JSONArray) parser.parse(new FileReader("D:\\Kursy\\testOCADO\\self-test-data\\advanced-allocation\\orders.json"));
-            System.out.println("Now please enter the source path to the orders.json file: ");
-            a = (JSONArray) parser.parse(new FileReader(bufferedReader.readLine()));
+            a = (JSONArray) parser.parse(new FileReader(url));
             for (Object o : a)
             {
                 JSONObject order = (JSONObject) o;

@@ -5,14 +5,13 @@ package test2;
 
 public class Main {
     public static void main(String[] args) {
-        //Read store data drom Json file
-        ReadStore readStore = new ReadStore();
-        //Read orders data from Json file
-        ReadOrders readOrders = new ReadOrders();
         //Basing on read data stored in objects preparing schedules for order packing
-        Scheduler scheduler = new Scheduler(readOrders.orderClasses, readStore.storeClass);
+        Scheduler scheduler = new Scheduler(new ReadOrders("src/main/resources/logic-bomb/orders.json").orderClasses,
+                new ReadStore("src/main/resources/logic-bomb/store.json").storeClass);
+
         //Chosen type of sorting by
-        scheduler.timeSortByCompleteBy();
+        //scheduler.timeSortByCompleteBy();
+        scheduler.optimalSort(scheduler.orderClasses);
     }
 
 }

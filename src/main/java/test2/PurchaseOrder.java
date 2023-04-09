@@ -6,10 +6,12 @@ public class PurchaseOrder {
     String picker;
     String orderId;
     LocalTime pickingStopTime;
+    Double value;
 
-    public PurchaseOrder(String picker, String orderId, LocalTime pickingStopTime) {
+    public PurchaseOrder(String picker, String orderId, LocalTime pickingStopTime, Double value) {
         this.picker = picker;
         this.orderId = orderId;
         this.pickingStopTime = pickingStopTime;
+        this.value = value;
     }
 }

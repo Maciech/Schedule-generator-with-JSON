@@ -16,8 +16,6 @@ public class StoreClass {
         this.pickingEndTime = pickingEndTime;
     }
 
-    public StoreClass() {
-    }
 
     public List<String> getPickers() {
         return pickers;
